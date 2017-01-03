@@ -4,7 +4,7 @@
   yum : name=certbot state=present
   when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int == 7
 
-# FIXME: otherwise we need to install with certbot-auto (into virtualenv, wtf..)
+# FIXME or not (el6 installation support): we need to install with certbot-auto (into virtualenv, wtf..)
 # https://wiki.shaunc.com/wikka.php?wakka=UsingCertbotAndLetsEncryptOnCentos6
 
 - file: path="{{ letsencrypt_webroot }}" owner=root group=root mode=755 state=directory

@@ -1,10 +1,13 @@
 ansible-role-letsencrypt
 ========================
 
-Role for letsencrypt automation via certbot.
+Role for letsencrypt automation via certbot on Centos 7 and Fedora.
+Partial support for Centos 6.
 
 Role Variables
 --------------
+
+Set `letsencrypt_autogenerate: False` for dry runs.
 
 See `defaults/main.yml`.
 
