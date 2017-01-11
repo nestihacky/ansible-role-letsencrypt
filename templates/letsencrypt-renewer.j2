@@ -1,13 +1,6 @@
 #!/bin/bash
 #{{ ansible_managed }}
 
-systemctl status sniproxy &> /dev/null
-has_sniproxy=$?
-
-test $has_sniproxy == 0 && systemctl stop sniproxy
-systemctl stop httpd
 
 /usr/bin/letsencrypt renew
-
-systemctl start httpd
-test $has_sniproxy == 0 && systemctl start sniproxy
+systemctl reload httpd
